@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import axios from 'axios';
 
 const BookSchema = z.object({
     about: z.string(),
@@ -23,7 +24,14 @@ const FormColorBook = () => {
 
     const onSubmit = async (values: z.infer<typeof BookSchema>) => {
 
-        console.log(values)
+        try {
+            console.log(values)
+            const response = await axios.post("/api/generate-colorbook", values);
+            console.log(response.data)
+
+        } catch (error) {
+            console.log("Something Went Wrong")
+        }
     }
 
     return (
