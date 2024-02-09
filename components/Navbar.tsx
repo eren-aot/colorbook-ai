@@ -20,9 +20,11 @@ const Navbar = () => {
                             <div className='text-gray-600 lg:pr-4 lg:w-auto w-full lg:pt-0'>
                                 <ul className='tracking-wide font-medium lg:text-sm hidden md:flex gap-6'>
                                     <li className='cursor-pointer'>
-                                        <span>
-                                            Dashboard
-                                        </span>
+                                        <Link href={"/dashboard"}>
+                                            <span>
+                                                Dashboard
+                                            </span>
+                                        </Link>
                                     </li>
                                     <li className='cursor-pointer'>
                                         <span>
@@ -50,7 +52,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </nav>
-        </header>
+        </header >
     )
 }
 
