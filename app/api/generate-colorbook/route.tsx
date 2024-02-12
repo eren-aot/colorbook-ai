@@ -17,11 +17,12 @@ export async function POST(req: Request) {
         })
 
         const image = await openai.images.generate({
-            model : "dall-e-2",
-            prompt : `Generate a coloring page based on the description ${about}.The coloring page should be detailed and complex with shades.`
+            model: "dall-e-2",
+            prompt: `Generate a coloring page based on the description ${about}.The coloring page should be detailed and complex with shades.`
         });
+        console.log(image.data)
 
-        return NextResponse.json({image : image.data})
+        return NextResponse.json({ image: image.data })
 
     } catch (error) {
 
